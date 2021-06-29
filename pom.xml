@@ -30,20 +30,6 @@
 				<artifactId>mule-maven-plugin</artifactId>
 				<version>${mule.maven.plugin.version}</version>
 				<extensions>true</extensions>
-				<configuration>
-				    <cloudHubDeployment>
-				      <uri>https://anypoint.mulesoft.com</uri>
-				      <muleVersion>${app.runtime}</muleVersion>
-				      <username>${username}</username>
-				      <password>${password}</password>
-				      <applicationName>${appname}</applicationName>
-				      <environment>${environment}</environment>
-				      <workerType>${workerType}</workerType>
-					  <objectStoreV2>true</objectStoreV2>
-					  <businessGroup>${business}</businessGroup>
-					  <workers>${workers}</workers>
-    				</cloudHubDeployment>
-				</configuration>
 			</plugin>
 		</plugins>
 	</build>
@@ -88,5 +74,39 @@
             </snapshots>
         </pluginRepository>
     </pluginRepositories>
+    <profiles>
+   <profile>
+  <id>cloudhub</id>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.mule.tools.maven</groupId>
+        <artifactId>mule-maven-plugin</artifactId>
+        <configuration>
+          <deploymentType>cloudhub</deploymentType>
+          <muleVersion>${mule.version}</muleVersion> 
+          <username>${anypoint.username}</username> 
+          <password>${anypoint.password}</password> 
+          <applicationName>${appname}</applicationName>
+          <environment>${env}</environment> 
+          <businessGroup>${business}</businessGroup>
+          <uri>https://anypoint.mulesoft.com</uri> 
+          <workerType>${vCore}</workerType>
+          <workers>${workers}</workers>
+        </configuration>
+        <executions>
+          <execution>
+            <id>deploy</id>
+            <phase>deploy</phase>
+            <goals>
+              <goal>deploy</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+</profile>
+</profiles>
 
 </project>
