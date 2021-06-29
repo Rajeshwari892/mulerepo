@@ -36,9 +36,8 @@
 				      <muleVersion>${app.runtime}</muleVersion>
 				      <username>${username}</username>
 				      <password>${password}</password>
-				      <applicationName>${cloudhub.application.name}</applicationName>
+				      <applicationName>${appname}</applicationName>
 				      <environment>${environment}</environment>
-				      <region>${region}</region>
 				      <workerType>${workerType}</workerType>
 					  <objectStoreV2>true</objectStoreV2>
 					  <businessGroup>${business}</businessGroup>
