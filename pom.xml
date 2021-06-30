@@ -75,38 +75,42 @@
         </pluginRepository>
     </pluginRepositories>
     <profiles>
-   <profile>
-  <id>cloudhub</id>
-  <build>
-    <plugins>
-      <plugin>
-        <groupId>org.mule.tools.maven</groupId>
-        <artifactId>mule-maven-plugin</artifactId>
-        <configuration>
-          <deploymentType>cloudhub</deploymentType>
+ <profile>
+      <id>cloudhub</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.mule.tools.maven</groupId>
+            <artifactId>mule-maven-plugin</artifactId>
+            <configuration>
+              <cloudHubDeployment>
+         
           <muleVersion>${mule.version}</muleVersion> 
           <username>${anypoint.username}</username> 
           <password>${anypoint.password}</password> 
           <applicationName>${appname}</applicationName>
-          <environment>${env}</environment> 
+          <environment>${env}</environment>
+	  	  <region>us-west-2</region> 
           <businessGroup>${business}</businessGroup>
           <uri>https://anypoint.mulesoft.com</uri> 
+		  <objectStoreV2>true</objectStoreV2>
           <workerType>${vCore}</workerType>
           <workers>${workers}</workers>
-        </configuration>
-        <executions>
-          <execution>
-            <id>deploy</id>
-            <phase>deploy</phase>
-            <goals>
-              <goal>deploy</goal>
-            </goals>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
-  </build>
-</profile>
-</profiles>
+              </cloudHubDeployment>
+            </configuration>
+            <executions>
+              <execution>
+                <id>deploy</id>
+                <phase>deploy</phase>
+                <goals>
+                  <goal>deploy</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    </profiles>
 
 </project>
