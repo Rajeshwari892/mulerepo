@@ -98,8 +98,6 @@
           <workers>${workers}</workers>
               </cloudHubDeployment>
             </configuration>
-            
-
           </plugin>
         </plugins>
       </build>
