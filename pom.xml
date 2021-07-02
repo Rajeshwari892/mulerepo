@@ -75,33 +75,32 @@
         </pluginRepository>
     </pluginRepositories>
     <profiles>
- <profile>
-      <id>cloudhub</id>
-      <build>
-        <plugins>
-          <plugin>
-            <groupId>org.mule.tools.maven</groupId>
-            <artifactId>mule-maven-plugin</artifactId>
-            <configuration>
-              <cloudHubDeployment>
-         
-          <muleVersion>${mule.version}</muleVersion> 
-          <username>${anypoint.username}</username> 
-          <password>${anypoint.password}</password> 
-          <applicationName>${appname}</applicationName>
-          <environment>${env}</environment>
-	  	  <region>us-west-2</region> 
-          <businessGroup>${business}</businessGroup>
-          <uri>https://anypoint.mulesoft.com</uri> 
-		  <objectStoreV2>true</objectStoreV2>
-          <workerType>${vCore}</workerType>
-          <workers>${workers}</workers>
-              </cloudHubDeployment>
-            </configuration>
-          </plugin>
-        </plugins>
-      </build>
-    </profile>
+		<profile>
+		  <id>cloudhub</id>
+		  <build>
+			<plugins>
+			  <plugin>
+				<groupId>org.mule.tools.maven</groupId>
+				<artifactId>mule-maven-plugin</artifactId>
+				<configuration>
+				  <cloudHubDeployment>
+					  <muleVersion>${mule.version}</muleVersion> 
+					  <username>${anypoint.username}</username> 
+					  <password>${anypoint.password}</password> 
+					  <applicationName>${appname}</applicationName>
+					  <environment>${env}</environment>
+					  <region>us-west-2</region> 
+					  <businessGroup>${business}</businessGroup>
+					  <uri>https://anypoint.mulesoft.com</uri> 
+					  <objectStoreV2>true</objectStoreV2>
+					  <workerType>${vCore}</workerType>
+			  <workers>${workers}</workers>
+				  </cloudHubDeployment>
+				</configuration>
+			  </plugin>
+			</plugins>
+			</build>
+		</profile>
     </profiles>
 
 </project>
